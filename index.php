@@ -1,19 +1,22 @@
 <?php
-$balance = 200.00;
-$operation = (int)readline("qual operação deseja fazer: 1- Desposito; 2- Saque;\n");
-$value = (int)readline("Qual o valor da operação? ");
+$number1 = readline("Digite o primeiro número: ");
+$number2 = readline("Digite o segundo número: ");
+$operation = readline("Digite a operação que deseja fazer( +, -, *, /): ");
 
-if($operation === 1) {
-    echo("Seu saldo inicial: {$balance} \n");
-    echo("Operação realizada: Deposito \n");
-    $balance += $value;
-    echo("Saldo atual: {$balance}");
-} else{
-    echo("Seu saldo inicial: {$balance} \n");
-    echo("Operação realizada: Saque \n");
-    $balance -= $value;
-    echo("Saldo atual: {$balance}");
-};
+switch ($operation) {
+    case "+" :
+        $result = $number1 + $number2;
+        echo("{$number1} {$operation} {$number2} = {$result}");
+    case "-" : 
+        $result = $number1 - $number2;
+        echo("{$number1} {$operation} {$number2} = {$result}");
+    case "/" : 
+        $result = $number1 / $number2;
+        echo("{$number1} {$operation} {$number2} = {$result}");
+    case "*" : 
+        $result = $number1 * $number2;
+        echo("{$number1} X {$number2} = {$result}");
 
+}
 ?>
 
