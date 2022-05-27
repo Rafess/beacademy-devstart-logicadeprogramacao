@@ -1,15 +1,19 @@
 <?php
+$balance = 200.00;
+$operation = (int)readline("qual operação deseja fazer: 1- Desposito; 2- Saque;\n");
+$value = (int)readline("Qual o valor da operação? ");
 
-$age = (int)readline('Digite sua idade: ');
-
-if($age < 19) {
-    echo("Menor de idade!");
-} else if($age >= 18 && $age < 60) {
-    echo("Adulto");
-} else {
-    echo("Idoso");
-}
-
+if($operation === 1) {
+    echo("Seu saldo inicial: {$balance} \n");
+    echo("Operação realizada: Deposito \n");
+    $balance += $value;
+    echo("Saldo atual: {$balance}");
+} else{
+    echo("Seu saldo inicial: {$balance} \n");
+    echo("Operação realizada: Saque \n");
+    $balance -= $value;
+    echo("Saldo atual: {$balance}");
+};
 
 ?>
 
