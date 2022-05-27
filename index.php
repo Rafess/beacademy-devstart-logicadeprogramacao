@@ -1,22 +1,33 @@
 <?php
-$figure = readline("Escolha a figura geométrica desejada: Q-Quadrado T-Triangulo: ");
-
-switch ($figure) {
-    case "T" :
-        $base = readline("Digite a medida da base: ");
-        $sideA = readline("Digite a medida do lado do triangulo: ");
-        $sideB = readline("Digite a medida do outro lado do triangulo: ");
-        $height = readline("Digite a altura: ");
-        $area = ($base * $height);
-        $perimeter = ($base + $sideA + $sideB);
-        echo("A área do triangulo é: {$area} \n E o perímetro é: {$perimeter}");
+$balance = 200.00;
+$operation = (int)readline("Qual operação deseja fazer: 1- Desposito; 2- Saque, 3- Transferência;\n");
+$value = (int)readline("Qual o valor da operação? ");
+switch ($operation) {
+    case 1:
+        echo("Seu saldo inicial: {$balance} \n");
+        echo("Operação realizada: Deposito \n");
+        $balance += $value;
+        echo("Saldo atual: {$balance}");
         break;
-    case "Q" : 
-        $side = readline("Digite a medida do lado do quadrado: ");
-        $area = ($side ** 2);
-        $perimeter = ($side * 4);
-        echo("A área do quadrado é: {$area} \n E o perímetro é: {$perimeter}");
+    case 2: 
+        echo("Seu saldo inicial: {$balance} \n");
+        echo("Operação realizada: Saque \n");
+        $balance -= $value;
+        echo("Saldo atual: {$balance}");
         break;
-   }
+    case 3:
+        $bank = readline("Qual o nome do banco? ");
+        $agency = readline("Qual o número da agência? ");
+        $account = readline("Qual o número da conta? ");
+        echo("Seu saldo inicial: {$balance} \n");
+        echo("Operação realizada: Transferência para: \n
+        Banco: {$bank} \n
+        Agência: {$agency} \n
+        Conta: {$account} \n
+        Valor: {$value} \n");
+        $balance -= $value;
+        echo("Saldo atual: {$balance}");
+        break;
+}
 ?>
 
