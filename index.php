@@ -1,11 +1,29 @@
 <?php
 // não se esqueça, para iniciar o programa use php e o nome desse arquivo (index.php)
 $name = readline('Digite seu nome: ');
-$hight = (float)readline('Digite sua altura em metros: ');
-$weight = (float)readline('Digite seu peso em kg: ');
-$IMC = ($weight / ($hight ** 2)); // imc = peso dividido pela altura ao quadrado;
-echo ("Nome: {$name}, Altura: {$hight}m, Peso: {$weight}kg, IMC: {$IMC}.");
+$age = (int)readline('Digite sua idade: ');
+
+echo ("Nome: {$name}, Idade: {$age}; \n");
 
 
+if($age > 18) {
+    echo "Verdadeiro \n";
+};
+
+if($age !== 25) {
+    echo "Falso \n";
+};
+
+if($name === "Marcos" && $age !== 25) {
+    echo "Falso \n";
+};
+
+if($age !== 25 || $name === "Marcos") {
+    echo "Verdadeiro \n";
+};
+
+if($age % 2 === 0) {
+    echo "Verdadeiro \n";
+};
 ?>
 
